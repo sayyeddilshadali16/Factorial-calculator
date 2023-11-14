@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1600493033157-eed3fbe95d96?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            height: 350px;
+            width: 500px;
+            margin-top: 120px;
+            padding: 13px;
+            padding-top: 100px;
+            background-color: rgba(255, 255, 255, 0.052);
+            backdrop-filter: blur(40px);
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 500px;
+            border-radius: 15px;
+            border: 1px solid gray;
+        }
+
+        h1,
+        input,
+        button,
+        h3 {
+            margin: 10px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 0;
+        }
+
+        h1,
+        h3 {
+            color: white;
+        }
+
+        button {
+            color: white;
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>FACTORIAL</h1>
+        <input id="number" placeholder="Enter a number">
+        <button onclick="fact1()"> Answer </button>
+        <h3 id="head"></h3>
+    </div>
+    <script>
+        function fact(num) {
+            if (num == 0) {
+                return 1;
+            }
+            else {
+                return num * fact(num - 1);
+            }
+        }
+        function fact1() {
+            var num = document.getElementById("number").value;
+            var f = fact(num);
+            document.getElementById("head").innerHTML = "The factorial of the number " + num + " is " + f;
+        }  
+    </script>
+</body>
+
+</html>
